@@ -110,7 +110,7 @@ def cond():
     "*** YOUR CODE HERE ***"
     if 3>2:
         return True
-    else:
+    elif 3<2:
         return False
 
 def true_func():
@@ -148,3 +148,28 @@ def hailstone(n):
         if n == 1:
             break
     return len(mylist)
+
+def hailstone_m2(n):
+    """This is the same function as hailstone, just use while function in a better way.
+    >>> a = hailstone_carol(3)
+    3
+    10
+    5
+    16
+    8
+    4
+    2
+    1
+    >>> a
+    8
+    """
+    k = 1
+    while n > 1:
+        k += 1
+        print(int(n))
+        if n % 2 == 0:
+            n /= 2
+        else:
+            n = n * 3 + 1
+    print(int(n))
+    return k
