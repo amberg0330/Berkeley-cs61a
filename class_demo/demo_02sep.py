@@ -55,7 +55,6 @@ def sum_naturals(n):
    return total
 
 #from math import pow
-
 def sum_cubes(n):
     """Sum the first n cubes of natural numbers.
     >>> sum_cubes(5)
@@ -97,7 +96,8 @@ def sum_cubes(n):
     """
     return summation(n, cube)
 
-##############how to calculate pi ##############
+##############how to calculate pi v4- 6##############
+##lambda function##
 from operator import mul
 def pi_term(k):
     return 8 / mul(4 * k -3, 4 * k -1)
@@ -113,4 +113,71 @@ def make_adder(n):
     """
     def adder(k):
         return k + n
-    return adder 
+    return adder
+
+
+###lambda function###
+
+## return statement
+def end(n, d):
+    """print the final digits of n in reverse order until D is found.
+    >>> end(34567, 5)
+    7
+    6
+    5
+    """
+    while n > 0:
+        last, n = n % 10, n // 10
+        print(last)
+        if d == last:
+            return None
+
+##
+def search(f):
+    x = 0
+    while True:
+        if f(x):
+            return x
+        x += 1
+
+def search2(f):
+    x = 0
+    while not f(x):
+        x += 1
+    return x
+
+def is_three(x):
+    return x == 3
+
+def square(x):
+    return x * x
+
+def positive(x):
+    return max(0, square(x) - 100)
+
+## inverse function
+def inverse(f):
+    """Return g(y) such that g(f(x))->x.
+    >>> sqrt = inverse(square)
+    >>> sqrt(16)
+    4.0
+    """
+    return lambda y: search(lambda: f(x) == y)
+
+## control function
+from math import sqrt
+
+def real_sqrt(x):
+    if x > 0:
+        return sqrt(x)
+    else:
+        return 0
+
+def if_(c, t, f):
+    if c:
+        return t
+    else:
+        return f
+
+def real_sqrt2(x):
+    return if_(x > 0, sqrt(x), 0.0)
