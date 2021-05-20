@@ -1,4 +1,5 @@
 """make reverse function using lumbda"""
+# https://www.youtube.com/watch?v=QIh6CyrWhvw&list=PL6BsET-8jgYXeefqDPnwLJ03jyw5-KKTT&index=7&ab_channel=JohnDeNeroJohnDeNero
 
 def search(f):
     x = 0 
