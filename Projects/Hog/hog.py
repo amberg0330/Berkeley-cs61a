@@ -92,9 +92,29 @@ def swine_align(player_score, opponent_score):
     False
     """
     # BEGIN PROBLEM 4a
-    "*** YOUR CODE HERE ***"
-    # END PROBLEM 4a
+    if player_score != 0 and opponent_score != 0: 
+       i = player_score 
+       k = opponent_score 
+       div_p = []
+       div_o = []
+       while i >= 1: 
+           if player_score % i == 0: 
+               div_p.append(i)
+           i -= 1
+    
+       while k >= 1:
+           if opponent_score % k == 0: 
+               div_o.append(k)
+           k -= 1 
+    
+       div_p_set = set(div_p)
+       intersection = div_p_set.intersection(div_o)
 
+       return max(intersection) >= 10
+    else:
+        return False 
+   
+    # END PROBLEM 4a
 
 def pig_pass(player_score, opponent_score):
     """Return whether the player gets an extra turn due to Pig Pass.
@@ -114,7 +134,7 @@ def pig_pass(player_score, opponent_score):
     False
     """
     # BEGIN PROBLEM 4b
-    "*** YOUR CODE HERE ***"
+    return 0 < opponent_score - player_score < 3 
     # END PROBLEM 4b
 
 
