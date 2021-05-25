@@ -113,8 +113,8 @@ def swine_align(player_score, opponent_score):
        return max(intersection) >= 10
     else:
         return False 
-   
     # END PROBLEM 4a
+
 
 def pig_pass(player_score, opponent_score):
     """Return whether the player gets an extra turn due to Pig Pass.
@@ -151,7 +151,7 @@ def other(who):
 
 def silence(score0, score1):
     """Announce nothing (see Phase 2)."""
-    return silence
+    return silence 
 
 
 def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
@@ -173,8 +173,31 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
     """
     who = 0  # Who is about to take a turn, 0 (first) or 1 (second)
     # BEGIN PROBLEM 5
-    "*** YOUR CODE HERE ***"
-    # END PROBLEM 5
+
+    while (score0 < goal) and (score1 < goal): 
+        if who == 0: 
+            dice_num = strategy0(score0, score1)
+            curr_score = take_turn(dice_num, score1, dice)
+            score0 += curr_score 
+            if extra_turn(score0, score1): 
+                dice_num = strategy0(score0, score1)
+                curr_score = take_turn(dice_num, score1, dice)
+                score0 += curr_score 
+        
+        elif who == 1: 
+            dice_num = strategy1(score1, score0)
+            curr_score =  take_turn(dice_num, score0, dice)
+            score1 += curr_score
+            if extra_turn(score1, score0):
+                dice_num = strategy1(score1, score0)
+                curr_score = take_turn(dice_num, score0, dice)
+                score1 += curr_score
+
+        who = other(who)
+    
+
+
+
     # (note that the indentation for the problem 6 prompt (***YOUR CODE HERE***) might be misleading)
     # BEGIN PROBLEM 6
     "*** YOUR CODE HERE ***"
