@@ -179,31 +179,30 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
             dice_num = strategy0(score0, score1)
             curr_score = take_turn(dice_num, score1, dice)
             score0 += curr_score 
-            if extra_turn(score0, score1): 
+            if score0 > goal:
+                break 
+            while extra_turn(score0, score1) and (score0 < goal) and (score1 < goal): 
                 dice_num = strategy0(score0, score1)
                 curr_score = take_turn(dice_num, score1, dice)
                 score0 += curr_score 
-        
+            
         elif who == 1: 
             dice_num = strategy1(score1, score0)
             curr_score =  take_turn(dice_num, score0, dice)
             score1 += curr_score
-            if extra_turn(score1, score0):
+            if score1 > goal:
+                break
+            while extra_turn(score1, score0) and (score0 < goal) and (score1 < goal):
                 dice_num = strategy1(score1, score0)
                 curr_score = take_turn(dice_num, score0, dice)
                 score1 += curr_score
-
+              
         who = other(who)
-    
-
-
-
     # (note that the indentation for the problem 6 prompt (***YOUR CODE HERE***) might be misleading)
     # BEGIN PROBLEM 6
     "*** YOUR CODE HERE ***"
     # END PROBLEM 6
     return score0, score1
-
 
 #######################
 # Phase 2: Commentary #
