@@ -1,4 +1,4 @@
-# Berkeley-cs61a
+# Berkeley-cs61a-2020Fall
 The cs 61 series is an introduction in computer science, with particular emphasis on software and on machines from a programmers' point of view.
 
 1. CS 61A: concentrates on ideas of abstraction, allowing programmers to think in terms of appropriate to the problem rather than in low-level opperations dictated by the computer hardware. 
