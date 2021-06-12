@@ -266,9 +266,6 @@ def both(f, g):
 
 def announce_highest(who, last_score=0, running_high=0):
     """Return a commentary function that announces when WHO's score
-
-
-    
     increases by more than ever before in the game.
 
     NOTE: the following game is not possible under the rules, it's just
@@ -289,6 +286,13 @@ def announce_highest(who, last_score=0, running_high=0):
     assert who == 0 or who == 1, 'The who argument should indicate a player.'
     # BEGIN PROBLEM 7
     "*** YOUR CODE HERE ***"
+    def say(score0, score1):
+        
+        print(, "point(s)! The most yet for Player", who)
+        return announce_highest
+
+return say
+
     # END PROBLEM 7
 
 
