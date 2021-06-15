@@ -53,7 +53,6 @@ test = {
           >>> # Enter a float (e.g. 1.0) instead of an integer
           >>> averaged_roll_dice(2, dice)
           6.0 
-          ## why? 
           # locked
           """,
           'hidden': False,
