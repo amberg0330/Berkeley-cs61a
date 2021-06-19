@@ -120,4 +120,33 @@ def cycle(f1, f2, f3):
     19
     """
     "*** YOUR CODE HERE ***"
+    def ret_func(n):
+        def an_func(x):
+            i = 1
+            while i <= n:
+                if i % 3 == 1: 
+                    x = f1(x)
+                elif i % 3 == 2:
+                    x = f2(x)
+                elif i % 3 == 0:
+                    x = f3(x)
+                i += 1 
+            return x 
+        return an_func 
+    return ret_func 
+    
+
+        
+    
+        
+
+
+
+
+
+    
+
+
+
+        
 
